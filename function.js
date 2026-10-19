@@ -1,6 +1,6 @@
 const hamburger = document.querySelector(".hamburger");
 const nav = document.getElementById("navigation");
-const navList = document.getElementById("nav-list");
+const navList = document.querySelector(".navLists");
 
 const line1 = document.querySelector(".line1");
 const line2 = document.querySelector(".line2");
