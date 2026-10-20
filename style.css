@@ -7,17 +7,36 @@
     --lightBody: #f5f5f5;
     --darkBody: rgb(23, 23, 37);
     --sidebar: rgb(20, 20, 38);
+    --footer: rgb(14, 14, 23);
 }
 body.dark{
     --lightBody: rgb(23, 23, 37);
     --darkBody: #f5f5f5;
     --sidebar: #f5f5f5;
+    --footer: #d2d0d0;
 }
 body{
     background-color: var(--darkBody);
     color: var(--lightBody);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
+/* Base state of your smart navbar */
+.smart-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Stays on top of content layers */
+    transition: transform 0.3s ease-in-out; /* Creates a smooth slide animation */
+}
+
+/* The modern hide-state triggered on downward scrolling */
+.smart-navbar.nav-hidden {
+    transform: translateY(-100%); /* Shifts the entire header cleanly off-screen */
+}
+
 nav{
     background-image: linear-gradient(45deg, rgb(34, 36, 65), rgb(69, 35, 61));
     width: 100%;
@@ -62,7 +81,8 @@ nav ul li a{
     transition: 0.2s ease-in-out;
 }
 nav ul li a:hover{
-    background-color: rgba(29, 23, 37, 0.715);
+    background-color: white;
+    color: black;
 }
 .navLists{
     width: 40%;
@@ -98,8 +118,10 @@ nav ul li a:hover{
 
 /* SideBar */
 .sidebar{
+    position: fixed;
+    top: 90px;
     width: 20%;
-    height: 100vh;
+    height: calc(100vh - 90px);
     background-color: var(--sidebar);
     color: var(--lightBody);
     border-right: 1px solid rgb(113, 113, 113);
@@ -107,6 +129,10 @@ nav ul li a:hover{
     transform: translateX(-100%);
     transition: 0.2s ease-in-out;
     padding: 25px;
+}
+.sidebar.top{
+    top: 0;
+    height: 100vh;
 }
 .sidebar.active{
     z-index: 1;
@@ -123,6 +149,10 @@ nav ul li a:hover{
 .darkMode{
     display: flex;
     gap: 10px;
+}
+.themescore-logo{
+    width: 80px;
+    height: 80px;
 }
 @media screen and (max-width: 1000px) {
     .navLists{
@@ -177,4 +207,30 @@ nav ul li a:hover{
     .sidebar{
         width: 45%;
     }
+    .themescore-logo{
+        width: 60px;
+        height: 60px;
+    }
+}
+main{
+    height: 90vh;
+    width: 100%;
+}
+footer{
+    height: 400px;
+    width: 100%;
+    background-color: var(--footer);
+    padding: 25px;
+    color: var(--lightBody);
+}
+.social{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.social-icons{
+    display: flex;
+    gap: 10px;
+    padding: 5px;
 }

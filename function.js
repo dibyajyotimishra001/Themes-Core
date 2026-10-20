@@ -41,3 +41,25 @@ moon.addEventListener("click", ()=>{
         localStorage.setItem("theme", "disabled");        
     }
 });
+
+// Navebar behavour
+const navbar = document.querySelector('.smart-navbar');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    // 1. If scrolling down and passed the initial header boundary, hide it
+    if (currentScrollY > lastScrollY && currentScrollY > 70) {
+        navbar.classList.add('nav-hidden');
+        sidebar.classList.add("top");
+    } 
+    // 2. If scrolling up, immediately show it again
+    else {
+        navbar.classList.remove('nav-hidden');
+        sidebar.classList.remove("top");
+    }
+
+    // Update the baseline position for the next movement check
+    lastScrollY = currentScrollY;
+});
