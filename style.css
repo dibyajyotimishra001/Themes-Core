@@ -213,8 +213,12 @@ nav ul li a:hover{
     }
 }
 main{
-    height: 90vh;
+    margin-top: 100px;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 footer{
     height: 400px;

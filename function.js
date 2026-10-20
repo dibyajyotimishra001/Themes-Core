@@ -63,3 +63,24 @@ window.addEventListener('scroll', () => {
     // Update the baseline position for the next movement check
     lastScrollY = currentScrollY;
 });
+
+// Click detection outside navbar and sidebar
+document.addEventListener("click", (e)=>{
+    const isSideBarOpen = sidebar.classList.contains("active");
+    const isNavBarOpen = navList.classList.contains("active");
+
+    const clickedInsideSidebar = sidebar.contains(e.target);
+    const clickedInsideNavbar = nav.contains(e.target);
+
+    if(isSideBarOpen && !clickedInsideNavbar && !clickedInsideNavbar){
+        sidebar.classList.remove("active")
+    }
+    if(isNavBarOpen && !clickedInsideNavbar && !clickedInsideNavbar){
+        navList.classList.remove("active");
+
+        line1.classList.toggle("active");
+        line2.classList.toggle("active");
+        line3.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    }
+});
