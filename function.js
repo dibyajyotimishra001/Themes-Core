@@ -84,3 +84,37 @@ document.addEventListener("click", (e)=>{
         hamburger.classList.toggle("active");
     }
 });
+
+// Search Box
+const search = document.querySelector(".search");
+const video = document.getElementsByClassName("vid");
+
+const xIcon = document.querySelector(".bi-x-lg");
+xIcon.style.display = "none";
+
+search.addEventListener("input", ()=>{
+    let searchContent = search.value.toLowerCase().trim();
+
+    for(let i = 0; i < video.length; i++){
+        let vidContent = video[i].innerText.toLowerCase().trim();
+
+        if(vidContent.includes(searchContent)){
+            video[i].style.display = "flex";
+        }
+        else{
+            video[i].style.display = "none";
+        }
+        if(searchContent == ""){
+            video[i].style.display = "flex";
+            xIcon.style.display = "none";
+        }
+        if(searchContent != ""){
+            xIcon.style.display = "flex";
+            xIcon.addEventListener("click", ()=>{
+                search.value = "";
+                xIcon.style.display = "none";
+                video[i].style.display = "flex";
+            });
+        }
+    }
+});
