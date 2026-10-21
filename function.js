@@ -72,7 +72,7 @@ document.addEventListener("click", (e)=>{
     const clickedInsideSidebar = sidebar.contains(e.target);
     const clickedInsideNavbar = nav.contains(e.target);
 
-    if(isSideBarOpen && !clickedInsideNavbar && !clickedInsideNavbar){
+    if(isSideBarOpen && !clickedInsideNavbar && !clickedInsideSidebar){
         sidebar.classList.remove("active")
     }
     if(isNavBarOpen && !clickedInsideNavbar && !clickedInsideNavbar){
@@ -85,36 +85,26 @@ document.addEventListener("click", (e)=>{
     }
 });
 
-// Search Box
-const search = document.querySelector(".search");
-const video = document.getElementsByClassName("vid");
 
-const xIcon = document.querySelector(".bi-x-lg");
-xIcon.style.display = "none";
+// top scroll
 
-search.addEventListener("input", ()=>{
-    let searchContent = search.value.toLowerCase().trim();
+const toUpBtn = document.querySelector(".toUP");
 
-    for(let i = 0; i < video.length; i++){
-        let vidContent = video[i].innerText.toLowerCase().trim();
+if(toUpBtn){
 
-        if(vidContent.includes(searchContent)){
-            video[i].style.display = "flex";
+    window.addEventListener('scroll', () => {
+        // Jab page 300px se zyada niche scroll ho jaye tabhi dikhega
+        if (window.scrollY > 300) {
+            toUpBtn.classList.add('show-btn');
+        } else {
+            toUpBtn.classList.remove('show-btn'); // Top par gayab
         }
-        else{
-            video[i].style.display = "none";
-        }
-        if(searchContent == ""){
-            video[i].style.display = "flex";
-            xIcon.style.display = "none";
-        }
-        if(searchContent != ""){
-            xIcon.style.display = "flex";
-            xIcon.addEventListener("click", ()=>{
-                search.value = "";
-                xIcon.style.display = "none";
-                video[i].style.display = "flex";
-            });
-        }
-    }
-});
+    });
+    
+    toUpBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Ekdum smooth scrolling effect ke liye
+        });
+    });
+}

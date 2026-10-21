@@ -3,6 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    display: none;
+}
+.search-box.active{
+    display: flex;
 }
 .searchBox{
     width: 35%;
@@ -29,32 +34,6 @@
     grid-template-columns: repeat(4, 1fr);
     place-items: center;
 }
-@media screen and (max-width: 1550px) {
-    .contents{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .searchBox{
-        width: 50%;
-    }
-}
-@media screen and (max-width: 850px) {
-    .contents{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .searchBox{
-        width: 60%;
-        gap: 2px;
-    }
-}
-@media screen and (max-width: 500px) {
-    .contents{
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .searchBox{
-        width: 90%;
-        gap: 2px;
-    }  
-}
 .vid {
     width: 90%;
     margin-top: 50px;
@@ -72,4 +51,39 @@
 }
 a{
     text-decoration: none;
+}
+    @media screen and (max-width: 1550px) {
+        .contents{
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .searchBox{
+            width: 50%;
+        }
+    }
+    @media screen and (max-width: 850px) {
+        .contents{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .searchBox{
+            width: 60%;
+            gap: 2px;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .contents{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .searchBox{
+            width: 90%;
+            gap: 2px;
+        } 
+        .vid{
+            width: 100%;
+        }
+    }
+.searchIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
 }

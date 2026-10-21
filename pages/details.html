@@ -27,12 +27,12 @@
         }
         @media screen and (max-width: 500px) {
             img{
-                width: 95%;
+                width: 100%;
             }
         }
         .date { color: #aaaaaa; 
             font-size: 0.9em; 
-            margin-bottom: 20px; 
+            margin: 20px; 
         }
         
         /* 🚨 PRO TIP: This line is crucial! Without it, description line breaks will be ignored */
@@ -98,6 +98,14 @@
             <h3>Description:</h3>
             <div class="description" id="vid-desc"></div>
         </div>
+
+        <div class="toUP">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+            </svg>
+        </div>
     </main>
 
     <!-- footer -->
@@ -138,6 +146,7 @@
         </div>
     </footer>
 
+    <script src="../function.js"></script>
     <script>
         async function loadDetails() {
             // 1. Extract ?id=... from the URL
@@ -170,6 +179,5 @@
 
         loadDetails();
     </script>
-    <script src="../function.js"></script>
 </body>
 </html>

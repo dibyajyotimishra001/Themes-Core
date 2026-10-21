@@ -55,6 +55,7 @@ nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 10px;
 }
 .sec1{
     display: flex;
@@ -205,7 +206,7 @@ nav ul li a:hover{
 }
 @media screen and (max-width: 590px){
     .sidebar{
-        width: 45%;
+        width: 55%;
     }
     .themescore-logo{
         width: 60px;
@@ -237,4 +238,27 @@ footer{
     display: flex;
     gap: 10px;
     padding: 5px;
+}
+.toUP{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(84, 3, 197);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+/* JS scroll detection */
+.toUP.show-btn {
+    opacity: 1;
+    pointer-events: auto;
 }
