@@ -130,6 +130,8 @@ nav ul li a:hover{
     transform: translateX(-200%);
     transition: 0.2s ease-in-out;
     padding: 25px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 }
 .sidebar.top{
     top: 0;
@@ -262,4 +264,33 @@ footer{
 .toUP.show-btn {
     opacity: 1;
     pointer-events: auto;
+}
+.sideTitle{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+.sideTitle:hover{
+    border: 1px solid white;    
+}
+.bi-chevron-right{
+    transition: 0.2s ease-in;
+}
+.side-content.active .bi-chevron-right {
+    transform: rotate(90deg);
+}
+.sub-list{
+    display: none;
+}
+.side-content.active .sub-list {
+    display: block;
+}
+a{
+    color: white;
+}
+.side-content a{
+    text-decoration: none;
 }

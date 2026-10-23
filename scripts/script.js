@@ -81,8 +81,6 @@ async function loadVideos() {
 
 loadVideos();
 
-// search box
-
 // Search Box
 const search = document.querySelector(".search");
 const video = document.getElementsByClassName("vid");
