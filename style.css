@@ -9,6 +9,30 @@
     --sidebar: rgb(20, 20, 38);
     --footer: rgb(14, 14, 23);
 }
+::selection{
+    background-color: rgba(5, 107, 82, 0.985);
+    color: white;
+}
+::-webkit-scrollbar {
+  width: 10px;  /* Width of vertical scrollbar */
+  height: 10px; /* Height of horizontal scrollbar */
+}
+/* 2. The background track */
+::-webkit-scrollbar-track {
+  background: #d9d6d6;
+  border-radius: 5px;
+}
+
+/* 3. The draggable scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(84, 3, 197);
+  border-radius: 5px;
+}
+
+/* 4. Hover effect on the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(139, 3, 197);
+}
 body.dark{
     --lightBody: rgb(23, 23, 37);
     --darkBody: #f5f5f5;
