@@ -2,7 +2,7 @@ const contents = document.querySelector(".contents");
 
 let allVideos = [];
 let currentIndex = 0;
-const BATCH_SIZE = 21; // Loads 21 videos at a time (divisible by 3 for desktop grid)
+const BATCH_SIZE = 9; // Loads 21 videos at a time (divisible by 3 for desktop grid)
 
 // Function to render the next batch of videos into the DOM
 function renderNextBatch() {

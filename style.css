@@ -232,7 +232,7 @@ nav ul li a:hover{
 }
 @media screen and (max-width: 590px){
     .sidebar{
-        width: 55%;
+        width: 100%;
     }
     .themescore-logo{
         width: 60px;

@@ -41,6 +41,38 @@
             padding: 15px; 
             line-height: 1.5;
         }
+        .btns {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 90px;
+            height: 38px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            background-color: rgb(84, 3, 197);
+            color: white;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .dlbtn{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
     </style>
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -121,6 +153,9 @@
             <div class="description" id="vid-desc"></div>
         </div>
 
+        <!-- buttons -->
+        <div class="btns"></div>
+
         <div class="toUP">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-chevron-up"
                 viewBox="0 0 16 16">
@@ -194,6 +229,39 @@
                 document.getElementById('vid-date').innerText = "Uploaded on: " + videoData.date;
                 document.getElementById('vid-desc').innerText = videoData.description;
                 document.title = videoData.title; // Updates the browser tab title
+
+
+                const dlSection = document.querySelector(".btns");
+
+                videoData.downloads?.forEach(({ label, url }) => {
+                    const card = document.createElement("div");
+                    card.className = "dlbtn";
+
+
+                    /*
+                    dlSection.innerHTML = `
+                    <h3>${label}</h3>
+                    <a href="${url}" target="_blank" rel="noopener noreferrer" class="download-btn">
+                    <button class="btn">Download</button>
+                    </a>
+                `;
+                    
+                    */
+                    const lableDl = document.createElement("h3");
+                    lableDl.innerHTML = `${label}`;
+
+                    const Dlbtn = document.createElement("a");
+                    Dlbtn.innerHTML = '<button class="btn">Download</button>';
+                    Dlbtn.href = `${url}`;
+                    Dlbtn.target = '_blank';
+                    Dlbtn.rel = 'noopener noreferrer';
+                    Dlbtn.className = "download-btn";
+
+                    card.appendChild(lableDl);
+                    card.appendChild(Dlbtn);
+
+                    dlSection.appendChild(card);
+                });
             } else {
                 document.getElementById('vid-title').innerText = "Video not found!";
             }
