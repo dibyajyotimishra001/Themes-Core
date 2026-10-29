@@ -45,6 +45,10 @@
 .thum{
     width: 100%;
     border-radius: 10px;
+    transition: 0.2s ease-in-out;
+}
+.thum:hover{
+    transform: scale(1.03);
 }
 .title{
     font-weight: 700;
